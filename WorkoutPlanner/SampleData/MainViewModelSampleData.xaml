@@ -1,0 +1,12 @@
+﻿<vm:MainViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:WorkoutPlanner.ViewModels"
+    SampleProperty="Sample Text Property Value">
+
+    <vm:MainViewModel.Items>
+        <vm:WorkoutViewModel ID="0" WorkoutName="design one" />
+        <vm:WorkoutViewModel ID="1" WorkoutName="design two" />
+       </vm:MainViewModel.Items>
+
+</vm:MainViewModel>
