@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
+using System.IO.IsolatedStorage;
 using System.Windows;
 using WorkoutPlanner.Resources;
 
@@ -68,19 +71,26 @@ namespace WorkoutPlanner.ViewModels
             get;
             private set;
         }
-
+        
         /// <summary>
         /// Creates and adds a few ItemViewModel objects into the Items collection.
         /// </summary>
         public void LoadData()
         {
-            // Sample data; replace with real data
-            WorkoutViewModel toAdd = new WorkoutViewModel("Sample Routine");
 
-            ExerciseViewModel evm = new ExerciseViewModel(ExerciseType.LEG_PRESSING, 5);
+            //SaveHandler.LoadUserImagesLocalDataAsync();
+            
+            if (Items.Count == -1)
+            {
+                WorkoutViewModel toAdd = new WorkoutViewModel("Sample Routine");
 
-            toAdd.addExercise(evm);
-            this.Items.Add(toAdd);
+                ExerciseViewModel evm = new ExerciseViewModel(ExerciseType.LEG_PRESSING, 2);
+                ExerciseViewModel evm2 = new ExerciseViewModel(ExerciseType.SQUAT, 2);
+
+                toAdd.addExercise(evm);
+                toAdd.addExercise(evm2);
+                this.Items.Add(toAdd);
+            }
        
             this.IsDataLoaded = true;
         }

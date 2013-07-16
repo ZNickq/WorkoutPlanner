@@ -90,6 +90,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ActiveWorkout.xaml.cs">
+      <DependentUpon>ActiveWorkout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddExercise.xaml.cs">
       <DependentUpon>AddExercise.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SaveHandler.cs" />
     <Compile Include="ViewModels\ExerciseViewModel.cs" />
     <Compile Include="ViewModels\WorkoutViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -121,6 +125,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="ActiveWorkout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddExercise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

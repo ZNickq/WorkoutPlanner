@@ -38,7 +38,7 @@
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
-
+            <Button Margin="0,0,0,60" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="Button_Click"  Height="80" Width="200" Content="Start"></Button>
             <Image Source="{Binding AddIconSource}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Width="48" Height="48" Tap="on_tap" >
             </Image>
 

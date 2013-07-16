@@ -50,16 +50,16 @@
             <phone:LongListSelector x:Name="MainLongListSelector" Margin="0,0,-12,42" ItemsSource="{Binding Items}" SelectionChanged="MainLongListSelector_SelectionChanged">
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
-                      <StackPanel Margin="0,0,0,17">
-                          <TextBlock Text="{Binding WorkoutName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                          <TextBlock Text="{Binding DurationLine}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                      </StackPanel>
+                        <StackPanel Margin="0,0,0,17">
+                            <TextBlock Text="{Binding WorkoutName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                            <TextBlock Text="{Binding DurationLine}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        </StackPanel>
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
-            <Image Source="{Binding AddIconSource}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Width="48" Height="48" Tap="on_tap" >
-            </Image>
-       </Grid>
+            <Image Source="{Binding AddIconSource}" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Width="48" Height="48" Tap="on_tap" />
+            <Button  Content="khghj" Height="100" Click="Button_Click" />
+        </Grid>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to

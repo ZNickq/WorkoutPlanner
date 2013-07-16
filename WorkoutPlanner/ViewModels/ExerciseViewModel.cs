@@ -13,6 +13,7 @@ namespace WorkoutPlanner.ViewModels
         private static Dictionary<string, ExerciseType> _loaded;
         public static ExerciseType SQUAT = new ExerciseType("Squat", 1);
         public static ExerciseType LEG_PRESSING = new ExerciseType("Leg Pressing", 2);
+        public static ExerciseType ARM_CIRCLES = new ExerciseType("Arm Circles", 1);
 
         private string _name;
         private int _duration;
@@ -26,6 +27,10 @@ namespace WorkoutPlanner.ViewModels
             }
             _exerciseList.Add(name);
             _loaded.Add(name, this);
+        }
+
+        public ExerciseType()
+        {
         }
 
         public int getDuration()
@@ -59,6 +64,10 @@ namespace WorkoutPlanner.ViewModels
         private ExerciseType _type;
         private int _duration;
         private int _amount;
+
+        public ExerciseViewModel()
+        {
+        }
 
         public ExerciseViewModel(ExerciseType type, int amount)
         {

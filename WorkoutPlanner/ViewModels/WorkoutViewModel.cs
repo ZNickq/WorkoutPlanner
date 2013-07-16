@@ -15,6 +15,12 @@ namespace WorkoutPlanner.ViewModels
     {
         private static int new_ID = 0;
 
+        public WorkoutViewModel()
+        {
+            ID = new_ID;
+            new_ID++;
+        }
+
         public WorkoutViewModel(string workoutName)
         {
             ID = new_ID;
@@ -66,10 +72,15 @@ namespace WorkoutPlanner.ViewModels
         }
 
         private int _durationTime;
-        /// <summary>
-        /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
-        /// </summary>
-        /// <returns></returns>
+
+        public int DurationTime
+        {
+            get
+            {
+                return _durationTime;
+            }
+        }
+        
         public string DurationLine
         {
             get

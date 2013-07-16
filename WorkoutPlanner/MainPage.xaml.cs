@@ -9,6 +9,8 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WorkoutPlanner.Resources;
 using WorkoutPlanner.ViewModels;
+using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace WorkoutPlanner
 {
@@ -17,7 +19,15 @@ namespace WorkoutPlanner
         // Constructor
         public MainPage()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return;
+            }
 
             // Set the data context of the LongListSelector control to the sample data
             DataContext = App.ViewModel;
@@ -52,6 +62,12 @@ namespace WorkoutPlanner
         private void on_tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             NavigationService.Navigate(new Uri("/AddWorkout.xaml", UriKind.Relative));
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SaveHandler.SaveUserImagesLocalDataAsync();
         }
 
         // Sample code for building a localized ApplicationBar

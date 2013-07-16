@@ -57,6 +57,11 @@ namespace WorkoutPlanner
             NavigationService.Navigate(new Uri("/AddExercise.xaml?workout=" + (DataContext as WorkoutViewModel).ID, UriKind.Relative));
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ActiveWorkout.xaml?workout=" + (DataContext as WorkoutViewModel).ID, UriKind.Relative));
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{
