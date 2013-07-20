@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Linq;
@@ -16,8 +17,8 @@ namespace WorkoutPlanner
     class SaveHandler
     {
         public static void LoadUserImagesLocalDataAsync()
-
         {
+            //Debug.WriteLine("Got here ");
 
             try
 
@@ -30,8 +31,15 @@ namespace WorkoutPlanner
                 var fileStream = storage.OpenFile("save-data.bin", FileMode.OpenOrCreate, FileAccess.Read);
 
                 List<WorkoutViewModel> toRet = (List<WorkoutViewModel>)deserializer.ReadObject(fileStream);
-
                 fileStream.Close();
+
+                if (toRet == null)
+                {
+                    return;
+                }
+
+                //Debug.WriteLine("Reading " + toRet.Count);
+
 
                 foreach (WorkoutViewModel wvm in toRet)
                 {
@@ -40,10 +48,10 @@ namespace WorkoutPlanner
 
             }
 
-            catch
+            catch(Exception ex)
 
             {
-                throw;
+                string message = ex.Message;
             }
 
         }
@@ -83,10 +91,10 @@ namespace WorkoutPlanner
 
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
 
             {
-
+                throw ex;
             }
 
         }

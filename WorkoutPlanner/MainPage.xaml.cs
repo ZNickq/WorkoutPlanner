@@ -53,21 +53,20 @@ namespace WorkoutPlanner
                 return;
 
             // Navigate to the new page
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + (MainLongListSelector.SelectedItem as WorkoutViewModel).ID, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + (MainLongListSelector.SelectedItem as WorkoutViewModel).getID(), UriKind.Relative));
 
             // Reset selected item to null (no selection)
             MainLongListSelector.SelectedItem = null;
         }
 
-        private void on_tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/AddWorkout.xaml", UriKind.Relative));
-        }
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SaveHandler.SaveUserImagesLocalDataAsync();
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AddWorkout.xaml", UriKind.Relative));
         }
 
         // Sample code for building a localized ApplicationBar

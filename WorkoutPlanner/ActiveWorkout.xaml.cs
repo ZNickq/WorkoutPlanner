@@ -39,7 +39,7 @@ namespace WorkoutPlanner
             }
             if (ticks_running == 1) //First tick, set it all up
             {
-                CurExercise.Text = "Exercise: " + current_exercise_instance.Type.Title();
+                CurExercise.Text = "Exercise: " + current_exercise_instance.Type.Name;
             }
             Countdown.Text = ""+(current_exercise_instance.Duration - ticks_running + 1);
             int finished = (ticks_running == 1 ? ticks_running : ticks_running - 1) / (current_exercise_instance.Duration / current_exercise_instance.Amount);
@@ -60,7 +60,7 @@ namespace WorkoutPlanner
                     return;
                 }
                 current_exercise_instance = allModels[current_exercise_number];
-                Debug.WriteLine("AAA "+current_exercise_instance.Type.Title()+" for "+current_exercise_number);
+                Debug.WriteLine("AAA "+current_exercise_instance.Type.Name+" for "+current_exercise_number);
                 return;
             }
 
@@ -81,7 +81,7 @@ namespace WorkoutPlanner
                     allModels = (DataContext as WorkoutViewModel).LoadedExercises.ToArray();
 
 
-                    CurExercise.Text = "Exercise: " + current_exercise_instance.Type.Title();
+                    CurExercise.Text = "Exercise: " + current_exercise_instance.Type.Name;
                     Countdown.Text = ""+current_exercise_instance.Duration;
                     Remaining.Text = "Remaining: "+current_exercise_instance.Amount;
 

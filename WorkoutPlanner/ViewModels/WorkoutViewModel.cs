@@ -17,37 +17,27 @@ namespace WorkoutPlanner.ViewModels
 
         public WorkoutViewModel()
         {
-            ID = new_ID;
+            _id = new_ID;
             new_ID++;
         }
 
         public WorkoutViewModel(string workoutName)
         {
-            ID = new_ID;
+            _id = new_ID;
             new_ID++;
 
             WorkoutName = workoutName;
         }
 
         private int _id;
+
         /// <summary>
         /// Sample ViewModel property; this property is used to identify the object.
         /// </summary>
         /// <returns></returns>
-        public int ID
+        public int getID()
         {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (value != _id)
-                {
-                    _id = value;
-                    NotifyPropertyChanged("ID");
-                }
-            }
+            return _id;
         }
 
         private string _workoutName;
@@ -79,6 +69,10 @@ namespace WorkoutPlanner.ViewModels
             {
                 return _durationTime;
             }
+            set
+            {
+                _durationTime = value;
+            }
         }
         
         public string DurationLine
@@ -96,6 +90,10 @@ namespace WorkoutPlanner.ViewModels
             get
             {
                 return _loadedExercises;
+            }
+            set
+            {
+                _loadedExercises = value;
             }
         }
 

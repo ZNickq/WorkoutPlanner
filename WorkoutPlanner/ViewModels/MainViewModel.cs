@@ -78,7 +78,7 @@ namespace WorkoutPlanner.ViewModels
         public void LoadData()
         {
 
-            //SaveHandler.LoadUserImagesLocalDataAsync();
+            SaveHandler.LoadUserImagesLocalDataAsync();
             
             if (Items.Count == -1)
             {

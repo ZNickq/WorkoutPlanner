@@ -33,14 +33,28 @@ namespace WorkoutPlanner.ViewModels
         {
         }
 
-        public int getDuration()
+        public int Duration
         {
-            return _duration;
+            get
+            {
+                return _duration;
+            }
+            set
+            {
+                _duration = value;
+            }
         }
 
-        public string Title()
+        public string Name
         {
-            return _name;
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
         }
 
         public static List<string> ExerciseList
@@ -73,7 +87,7 @@ namespace WorkoutPlanner.ViewModels
         {
             _type = type;
             _amount = amount;
-            _duration = amount * _type.getDuration();
+            _duration = amount * _type.Duration;
         }
 
         public int Amount
@@ -82,13 +96,17 @@ namespace WorkoutPlanner.ViewModels
             {
                 return _amount;
             }
+            set
+            {
+                _amount = value;
+            }
         }
 
         public string Title
         {
             get
             {
-                return _type.Title() + " - "+Amount+" times";
+                return _type.Name + " - "+Amount+" times";
             }
         }
 

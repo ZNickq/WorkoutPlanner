@@ -5,8 +5,8 @@
     SampleProperty="Sample Text Property Value">
 
     <vm:MainViewModel.Items>
-        <vm:WorkoutViewModel ID="0" WorkoutName="design one" />
-        <vm:WorkoutViewModel ID="1" WorkoutName="design two" />
+        <vm:WorkoutViewModel WorkoutName="design one" />
+        <vm:WorkoutViewModel WorkoutName="design two" />
        </vm:MainViewModel.Items>
 
 </vm:MainViewModel>

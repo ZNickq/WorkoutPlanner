@@ -52,14 +52,14 @@ namespace WorkoutPlanner
             //WorkoutLongListSelector.SelectedItem = null;
         }
 
-        private void on_tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AddExercise.xaml?workout=" + (DataContext as WorkoutViewModel).ID, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/AddExercise.xaml?workout=" + (DataContext as WorkoutViewModel).getID(), UriKind.Relative));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ActiveWorkout.xaml?workout=" + (DataContext as WorkoutViewModel).ID, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/ActiveWorkout.xaml?workout=" + (DataContext as WorkoutViewModel).getID(), UriKind.Relative));
         }
 
         // Sample code for building a localized ApplicationBar
