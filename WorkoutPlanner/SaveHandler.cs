@@ -18,7 +18,6 @@ namespace WorkoutPlanner
     {
         public static void LoadUserImagesLocalDataAsync()
         {
-            //Debug.WriteLine("Got here ");
 
             try
 
@@ -37,8 +36,6 @@ namespace WorkoutPlanner
                 {
                     return;
                 }
-
-                //Debug.WriteLine("Reading " + toRet.Count);
 
 
                 foreach (WorkoutViewModel wvm in toRet)

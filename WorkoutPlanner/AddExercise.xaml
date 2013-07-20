@@ -29,13 +29,41 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock FontSize="25" Margin="15,10,0,0" Text="Type:" ></TextBlock>
-            <toolkit:ListPicker Margin="120,0,30,0" x:Name="MyListPicker">
-            </toolkit:ListPicker>
-            <TextBlock FontSize="25" Margin="15,105,0,0" Text="Amount:" ></TextBlock>
-            <TextBox MaxLength="3" Margin="120,86,30,444" InputScope="Number" Name="txtPhoneNumber" />
-            <Button Content="Add" HorizontalAlignment="Center" Margin="180,168,183,367" VerticalAlignment="Center" Click="add_button"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="20,0,0,0" VerticalAlignment="Center" FontSize="25" Text="Type:" ></TextBlock>
+                    <toolkit:ListPicker Margin="25,15,15,15" Width="300" x:Name="MyListPicker">
+                    </toolkit:ListPicker>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" FontSize="25" Text="Amount:" ></TextBlock>
+                    <TextBox Width="320" MaxLength="3" InputScope="Number" Name="txtPhoneNumber" />
+                </StackPanel>
+                <Button Content="Add" HorizontalAlignment="Center" VerticalAlignment="Center" Click="add_button"/>
+            </StackPanel>
+
         </Grid>
     </Grid>
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
 
 </phone:PhoneApplicationPage>

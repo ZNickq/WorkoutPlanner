@@ -38,6 +38,10 @@ namespace WorkoutPlanner
         private bool isValidNumber(string number)
         {
             int l = number.Length;
+            if (l == 0)
+            {
+                return false;
+            }
            // System.Diagnostics.Debug.WriteLine("It has "+l);
             for (int i = 0; i < l; i++)
             {
@@ -71,7 +75,8 @@ namespace WorkoutPlanner
                 Console.WriteLine(ex.Message); //Doesn't do shit but don't care
                 return;
             }
-            (DataContext as WorkoutViewModel).addExercise(new ExerciseViewModel(ExerciseType.FromName((string) MyListPicker.SelectedItem), nr));
+            (DataContext as WorkoutViewModel).addExercise(new ExerciseViewModel(ExerciseType.FromName((string)MyListPicker.SelectedItem), nr));
+            SaveHandler.SaveUserImagesLocalDataAsync();
             NavigationService.GoBack();
         }
     }

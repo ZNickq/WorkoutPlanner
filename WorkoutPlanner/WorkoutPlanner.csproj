@@ -116,6 +116,10 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="SaveHandler.cs" />
+    <Compile Include="SettingsHandler.cs" />
+    <Compile Include="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ExerciseViewModel.cs" />
     <Compile Include="ViewModels\WorkoutViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -149,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
+    <Page Include="SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -179,8 +187,10 @@
     </Content>
     <Content Include="Images\Dark\add.png" />
     <Content Include="Images\Dark\delete.png" />
+    <Content Include="Images\Dark\feature.settings.png" />
     <Content Include="Images\Light\add.png" />
     <Content Include="Images\Light\delete.png" />
+    <Content Include="Images\Light\feature.settings.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />

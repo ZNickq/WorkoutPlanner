@@ -21,6 +21,7 @@ namespace WorkoutPlanner
         {
             string tt = txtWorkoutName.Text;
             App.ViewModel.Items.Add(new ViewModels.WorkoutViewModel(tt));
+            SaveHandler.SaveUserImagesLocalDataAsync();
             NavigationService.GoBack();
         }
     }

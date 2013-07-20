@@ -21,17 +21,14 @@ namespace WorkoutPlanner.ViewModels
         /// </summary>
         public ObservableCollection<WorkoutViewModel> Items { get; private set; }
 
-        public string AddIconSource
+        internal void RefreshIDs()
         {
-            get
-            {
-                bool dark = ((Visibility)Application.Current.Resources["PhoneDarkThemeVisibility"] == Visibility.Visible);
-                if (dark)
-                {
-                    return "/Images/add-dark.png";
-                }
-                return "/Images/add-light.png";
+            int ID = 0;
+            foreach(WorkoutViewModel wvm in Items) {
+                wvm.setID(ID);
+                ID++;
             }
+            WorkoutViewModel.resetNewID(ID);
         }
 
         private string _sampleProperty = "Sample Runtime Property Value";

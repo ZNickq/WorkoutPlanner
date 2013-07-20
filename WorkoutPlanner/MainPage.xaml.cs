@@ -59,14 +59,14 @@ namespace WorkoutPlanner
             MainLongListSelector.SelectedItem = null;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            SaveHandler.SaveUserImagesLocalDataAsync();
-        }
-
         private void Add_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/AddWorkout.xaml", UriKind.Relative));
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/SettingsPage.xaml", UriKind.Relative));
         }
 
         // Sample code for building a localized ApplicationBar

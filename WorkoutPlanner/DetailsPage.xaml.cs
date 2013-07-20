@@ -52,6 +52,14 @@ namespace WorkoutPlanner
             //WorkoutLongListSelector.SelectedItem = null;
         }
 
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            App.ViewModel.Items.Remove((DataContext as WorkoutViewModel));
+            App.ViewModel.RefreshIDs();
+            SaveHandler.SaveUserImagesLocalDataAsync();
+            NavigationService.GoBack();
+        }
+
         private void Add_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/AddExercise.xaml?workout=" + (DataContext as WorkoutViewModel).getID(), UriKind.Relative));

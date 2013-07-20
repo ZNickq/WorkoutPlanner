@@ -15,6 +15,10 @@ namespace WorkoutPlanner.ViewModels
     {
         private static int new_ID = 0;
 
+        public static void resetNewID(int newID) {
+            new_ID = newID;
+        }
+
         public WorkoutViewModel()
         {
             _id = new_ID;
@@ -38,6 +42,11 @@ namespace WorkoutPlanner.ViewModels
         public int getID()
         {
             return _id;
+        }
+
+        public void setID(int newID)
+        {
+            _id = newID;
         }
 
         private string _workoutName;
@@ -114,20 +123,6 @@ namespace WorkoutPlanner.ViewModels
             if (null != handler)
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-
-        public string AddIconSource
-        {
-            get
-            {
-                bool dark = ((Visibility)Application.Current.Resources["PhoneDarkThemeVisibility"] == Visibility.Visible);
-                if (dark)
-                {
-                    return "/Images/add-dark.png";
-                }
-                return "/Images/add-light.png";
             }
         }
     }

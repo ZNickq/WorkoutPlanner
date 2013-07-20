@@ -27,8 +27,6 @@ namespace WorkoutPlanner
             dt.Start();
         }
 
-        private static int PAUSE_SECONDS = 5;
-
         void dt_Tick(object sender, EventArgs e)
         {
             ticks_running++; //TODO must check that there is always an exercise and amount can't be 0!!
@@ -46,11 +44,11 @@ namespace WorkoutPlanner
             Remaining.Text = "Remaining: " + (current_exercise_instance.Amount - finished);
             if (current_exercise_instance.Duration == ticks_running - 1)
             {
-                ticks_running = -PAUSE_SECONDS; //TODO set the layout to take a break
+                ticks_running = -SettingsPage.GetSettingsHandler.pause_duration; //TODO set the layout to take a break
                 CurExercise.Text = "Take a break!";
-                Countdown.Text = ""+PAUSE_SECONDS;
+                Countdown.Text = "" + SettingsPage.GetSettingsHandler.pause_duration;
                 current_exercise_number++;
-                Debug.WriteLine("Current exercise " + current_exercise_number+" from "+allModels.Length);
+                //Debug.WriteLine("Current exercise " + current_exercise_number+" from "+allModels.Length);
                 if (current_exercise_number == allModels.Length)
                 {
                     CurExercise.Text = "Congratulations!";
@@ -60,7 +58,7 @@ namespace WorkoutPlanner
                     return;
                 }
                 current_exercise_instance = allModels[current_exercise_number];
-                Debug.WriteLine("AAA "+current_exercise_instance.Type.Name+" for "+current_exercise_number);
+                //Debug.WriteLine("AAA "+current_exercise_instance.Type.Name+" for "+current_exercise_number);
                 return;
             }
 
