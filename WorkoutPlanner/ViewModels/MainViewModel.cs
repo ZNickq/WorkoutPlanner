@@ -77,18 +77,6 @@ namespace WorkoutPlanner.ViewModels
 
             SaveHandler.LoadUserImagesLocalDataAsync();
             
-            if (Items.Count == -1)
-            {
-                WorkoutViewModel toAdd = new WorkoutViewModel("Sample Routine");
-
-                ExerciseViewModel evm = new ExerciseViewModel(ExerciseType.LEG_PRESSING, 2);
-                ExerciseViewModel evm2 = new ExerciseViewModel(ExerciseType.SQUAT, 2);
-
-                toAdd.addExercise(evm);
-                toAdd.addExercise(evm2);
-                this.Items.Add(toAdd);
-            }
-       
             this.IsDataLoaded = true;
         }
 

@@ -77,6 +77,7 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
             <shell:ApplicationBarIconButton IconUri="/Images/Dark/add.png" Text="Exercise" Click="Add_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/Dark/feature.search.png" Text="View list" Click="ApplicationBarIconButton_Click"/>
             <shell:ApplicationBarIconButton IconUri="/Images/Dark/delete.png" Text="Delete" Click="Delete_Click"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

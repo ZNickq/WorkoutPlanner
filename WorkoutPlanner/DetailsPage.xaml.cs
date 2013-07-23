@@ -70,6 +70,11 @@ namespace WorkoutPlanner
             NavigationService.Navigate(new Uri("/ActiveWorkout.xaml?workout=" + (DataContext as WorkoutViewModel).getID(), UriKind.Relative));
         }
 
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ExerciseList.xaml", UriKind.Relative));
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{

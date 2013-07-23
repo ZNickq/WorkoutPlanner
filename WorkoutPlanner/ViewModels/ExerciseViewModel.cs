@@ -9,11 +9,17 @@ namespace WorkoutPlanner.ViewModels
 
     public class ExerciseType
     {
+
+        //https://dl.dropboxusercontent.com/u/13921141/WorkoutPlanner/api.json
+        public static async Task DownloadExerciseListAsync()
+        {
+        }
+
         private static List<string> _exerciseList;
         private static Dictionary<string, ExerciseType> _loaded;
-        public static ExerciseType SQUAT = new ExerciseType("Squat", 1);
-        public static ExerciseType LEG_PRESSING = new ExerciseType("Leg Pressing", 2);
-        public static ExerciseType ARM_CIRCLES = new ExerciseType("Arm Circles", 1);
+        //public static ExerciseType SQUAT = new ExerciseType("Squat", 1);
+        //public static ExerciseType LEG_PRESSING = new ExerciseType("Leg Pressing", 2);
+        //public static ExerciseType ARM_CIRCLES = new ExerciseType("Arm Circles", 1);
 
         private string _name;
         private int _duration;
