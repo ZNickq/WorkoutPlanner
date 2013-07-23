@@ -13,20 +13,16 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
+    
+    
+    
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <phone:Panorama Title="my application">
-
-            <!--Panorama item one-->
-            <phone:PanoramaItem Header="item1">
-                <Grid/>
-            </phone:PanoramaItem>
-
-            <!--Panorama item two-->
-            <phone:PanoramaItem Header="item2">
-                <Grid/>
-            </phone:PanoramaItem>
+        <phone:Panorama x:Name="myP" Title="Exercise List">
         </phone:Panorama>
     </Grid>
+    
+    
+    
 
 </phone:PhoneApplicationPage>

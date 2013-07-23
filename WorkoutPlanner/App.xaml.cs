@@ -217,7 +217,7 @@ namespace WorkoutPlanner
                 //
                 // If a compiler error is hit then ResourceLanguage is missing from
                 // the resource file.
-                RootFrame.Language = XmlLanguage.GetLanguage(AppResources.ResourceLanguage);
+                RootFrame.Language = XmlLanguage.GetLanguage(WorkoutPlanner.ViewModels.AppResources.ResourceLanguage);
 
                 // Set the FlowDirection of all elements under the root frame based
                 // on the ResourceFlowDirection resource string for each
@@ -225,7 +225,7 @@ namespace WorkoutPlanner
                 //
                 // If a compiler error is hit then ResourceFlowDirection is missing from
                 // the resource file.
-                FlowDirection flow = (FlowDirection)Enum.Parse(typeof(FlowDirection), AppResources.ResourceFlowDirection);
+                FlowDirection flow = (FlowDirection)Enum.Parse(typeof(FlowDirection), WorkoutPlanner.ViewModels.AppResources.ResourceFlowDirection);
                 RootFrame.FlowDirection = flow;
             }
             catch
