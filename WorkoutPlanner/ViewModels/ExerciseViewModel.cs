@@ -36,25 +36,25 @@ namespace WorkoutPlanner.ViewModels
                 string title = (string) jo.GetValue("title");
                 int dur = (int) jo.GetValue("duration");
                 string type = (string) jo.GetValue("type");
-                string description = (string) jo.GetValue("description");
+                string murl = (string) jo.GetValue("url");
                 ExerciseType et = new ExerciseType(title, type, dur);
-                et._description = description;
+                et._url = murl;
             }
 
             //Now load data
-            SaveHandler.LoadUserImagesLocalDataAsync();
+            await SaveHandler.LoadUserImagesLocalDataAsync();
             
 
         }
 
         private static List<string> _exerciseList;
         private static Dictionary<string, ExerciseType> _loaded;
-        private static List<string> exTypes = new List<string>();
+        private static HashSet<string> exTypes = new HashSet<string>();
         private static Dictionary<string, List<ExerciseType>> byType = new Dictionary<string, List<ExerciseType>>();
 
         private string _name;
         private string _type;
-        private string _description;
+        private string _url;
         private int _duration;
         private ExerciseType(string name, string type, int duration) {
             _name = name;
@@ -82,15 +82,15 @@ namespace WorkoutPlanner.ViewModels
         {
         }
 
-        public string Description
+        public string Url
         {
             get
             {
-                return _description;
+                return _url;
             }
             set
             {
-                _description = value;
+                _url = value;
             }
     }
 
@@ -125,7 +125,7 @@ namespace WorkoutPlanner.ViewModels
             return toRet;
         }
 
-        public static List<string> ExerciseTypes
+        public static HashSet<string> ExerciseTypes
         {
             get
             {

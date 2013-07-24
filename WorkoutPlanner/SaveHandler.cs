@@ -16,7 +16,7 @@ namespace WorkoutPlanner
 {
     class SaveHandler
     {
-        public static void LoadUserImagesLocalDataAsync()
+        public static async Task LoadUserImagesLocalDataAsync()
         {
 
             try

@@ -10,8 +10,8 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     d:DesignHeight="480" d:DesignWidth="480">
     
-    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
-        <phone:LongListSelector x:Name="lSelector">
+    <Grid x:Name="LayoutRoot" >
+        <phone:LongListSelector FontSize="40" x:Name="lSelector">
         </phone:LongListSelector>
     </Grid>
 </UserControl>
