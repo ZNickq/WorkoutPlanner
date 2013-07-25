@@ -136,6 +136,9 @@
     <Compile Include="ViewModels\ExerciseViewModel.cs" />
     <Compile Include="ViewModels\WorkoutViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="WorkoutChart.xaml.cs">
+      <DependentUpon>WorkoutChart.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -186,6 +189,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WorkoutChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -214,12 +221,15 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="chart-site.html" />
     <Content Include="Images\Dark\add.png" />
     <Content Include="Images\Dark\delete.png" />
+    <Content Include="Images\Dark\feature.calendar.png" />
     <Content Include="Images\Dark\feature.search.png" />
     <Content Include="Images\Dark\feature.settings.png" />
     <Content Include="Images\Light\add.png" />
     <Content Include="Images\Light\delete.png" />
+    <Content Include="Images\Light\feature.calendar.png" />
     <Content Include="Images\Light\feature.search.png" />
     <Content Include="Images\Light\feature.settings.png" />
     <Content Include="README_FIRST.txt" />

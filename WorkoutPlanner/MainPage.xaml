@@ -96,6 +96,7 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
             <shell:ApplicationBarIconButton IconUri="/Images/Dark/add.png" Text="Add Workout" Click="Add_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/Dark/feature.calendar.png" Text="History" Click="ApplicationBarIconButton_Click"/>
             <shell:ApplicationBarIconButton IconUri="/Images/Dark/feature.settings.png" Text="Settings" Click="Settings_Click" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

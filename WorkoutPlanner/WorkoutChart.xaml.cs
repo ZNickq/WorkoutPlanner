@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Diagnostics;
 
 namespace WorkoutPlanner
 {
@@ -25,36 +26,43 @@ namespace WorkoutPlanner
             WorkoutPerDay wpd2 = new WorkoutPerDay("24.7", 160);
             lwpd.Add(wpd);
             lwpd.Add(wpd2);
-        }
-    }
-
-    private class WorkoutPerDay
-    {
-        private string _day;
-        private int _duration;
-
-        public WorkoutPerDay(string day, int duration)
-        {
-            _day = day;
-            _duration = duration;
+            iBrowser.Navigate(new Uri("/chart-site.html", UriKind.Relative));
+            iBrowser.ScriptNotify += iBrowser_ScriptNotify;
         }
 
-        public string Day
+        void iBrowser_ScriptNotify(object sender, NotifyEventArgs e)
         {
-            get
+            Debug.WriteLine("Was notified!");
+        }
+
+        private class WorkoutPerDay
+        {
+            private string _day;
+            private int _duration;
+
+            public WorkoutPerDay(string day, int duration)
             {
-                return _day;
+                _day = day;
+                _duration = duration;
             }
-        }
 
-        public int Duration
-        {
-            get
+            public string Day
             {
-                return _duration;
+                get
+                {
+                    return _day;
+                }
             }
+
+            public int Duration
+            {
+                get
+                {
+                    return _duration;
+                }
+            }
+
+
         }
-
-
     }
 }
