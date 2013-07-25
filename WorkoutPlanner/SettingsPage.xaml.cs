@@ -45,6 +45,7 @@ namespace WorkoutPlanner
             GetSettingsHandler.pause_duration = Int32.Parse(pauseTextBox.Text);
             iss["pause_duration"] = GetSettingsHandler.pause_duration;
             iss.Save();
+            NavigationService.GoBack();
         }
     }
 }

@@ -67,6 +67,10 @@ namespace WorkoutPlanner
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if ((DataContext as WorkoutViewModel).LoadedExercises.Count == 0)
+            {
+                return;
+            }
             NavigationService.Navigate(new Uri("/ActiveWorkout.xaml?workout=" + (DataContext as WorkoutViewModel).getID(), UriKind.Relative));
         }
 

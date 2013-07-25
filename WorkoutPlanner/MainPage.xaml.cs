@@ -39,10 +39,7 @@ namespace WorkoutPlanner
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (!App.ViewModel.IsDataLoaded)
-            {
-                App.ViewModel.LoadData();
-            }
+
         }
 
         // Handle selection changed on LongListSelector

@@ -43,7 +43,8 @@ namespace WorkoutPlanner.ViewModels
 
             //Now load data
             await SaveHandler.LoadUserImagesLocalDataAsync();
-            
+
+            SplashScreen.DataLoaded = true;
 
         }
 

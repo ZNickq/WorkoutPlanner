@@ -20,6 +20,10 @@ namespace WorkoutPlanner
         private void on_tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             string tt = txtWorkoutName.Text;
+            if (tt.Length == 0)
+            {
+                return;
+            }
             App.ViewModel.Items.Add(new ViewModels.WorkoutViewModel(tt));
             SaveHandler.SaveUserImagesLocalDataAsync();
             NavigationService.GoBack();
