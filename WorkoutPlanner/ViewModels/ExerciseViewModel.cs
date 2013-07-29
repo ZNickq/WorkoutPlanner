@@ -13,16 +13,9 @@ namespace WorkoutPlanner.ViewModels
     public class ExerciseType
     {
 
-        /*
-         * {
-        "title": "Squat",
-        "duration": 2,
-        "type": "legs",
-        "description": "You just blah"
-    },
-         * 
-         * 
-         */
+
+        public static ExerciseType lastExercise;
+
         public static async Task DownloadExerciseListAsync()
         {
             HttpClient client = new HttpClient();
@@ -38,6 +31,7 @@ namespace WorkoutPlanner.ViewModels
                 string type = (string) jo.GetValue("type");
                 string murl = (string) jo.GetValue("url");
                 ExerciseType et = new ExerciseType(title, type, dur);
+                lastExercise = et;
                 et._url = murl;
             }
 

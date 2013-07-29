@@ -55,6 +55,15 @@ namespace WorkoutPlanner
                     Remaining.Text = "Workout finished.";
                     Countdown.Text = "";
                     (sender as System.Windows.Threading.DispatcherTimer).Stop();
+                    DateTime now = DateTime.Now;
+
+                    HashSet<string> exx = new HashSet<string>();
+                    foreach (ExerciseViewModel evm in allModels)
+                    {
+                        exx.Add(evm.Type.Name);
+                    }
+                    WorkoutPlanner.WorkoutChart.WorkoutPerDay wpd = new WorkoutPlanner.WorkoutChart.WorkoutPerDay(now.Day+"/"+now.Month, (DataContext as WorkoutViewModel).DurationTime, exx);
+                    WorkoutChart.addWorkoutPerDay(wpd, true);
                     return;
                 }
                 current_exercise_instance = allModels[current_exercise_number];

@@ -96,8 +96,51 @@ namespace WorkoutPlanner
 
         }
 
-    }
 
+        public static async Task LoadWorkoutDataAsync()
+        {
+            try
+            {
+                DataContractJsonSerializer deserializer = new DataContractJsonSerializer(typeof(List<WorkoutPlanner.WorkoutChart.WorkoutPerDay>));
+                var storage = IsolatedStorageFile.GetUserStoreForApplication();
+                var fileStream = storage.OpenFile("workout-data.bin", FileMode.OpenOrCreate, FileAccess.Read);
+                List<WorkoutPlanner.WorkoutChart.WorkoutPerDay> toRet = (List<WorkoutPlanner.WorkoutChart.WorkoutPerDay>)deserializer.ReadObject(fileStream);
+                fileStream.Close();
+                if (toRet == null)
+                {
+                    return;
+                }
+                foreach (WorkoutPlanner.WorkoutChart.WorkoutPerDay wvm in toRet)
+                {
+                    WorkoutChart.addWorkoutPerDay(wvm, false);
+                }
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+            }
+        }
+
+        public static async System.Threading.Tasks.Task SaveWorkoutDataAsync()
+        {
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<WorkoutPlanner.WorkoutChart.WorkoutPerDay>));
+            try
+            {
+                var allItems = WorkoutChart.lwpd;
+                var storage = IsolatedStorageFile.GetUserStoreForApplication();
+                var fileStream = storage.OpenFile("workout-data.bin", FileMode.Create, FileAccess.ReadWrite);
+                MemoryStream ms = new MemoryStream();
+                ser.WriteObject(fileStream, allItems);
+                fileStream.Close();
+                ms.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
 }
 
 

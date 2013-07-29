@@ -221,7 +221,6 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="chart-site.html" />
     <Content Include="Images\Dark\add.png" />
     <Content Include="Images\Dark\delete.png" />
     <Content Include="Images\Dark\feature.calendar.png" />

@@ -22,12 +22,21 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Workout Chart" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Stats" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <phone:WebBrowser IsScriptEnabled="True" x:Name="iBrowser" />
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="30,0,12,0">
+            <StackPanel VerticalAlignment="Center" Margin="0,-100,0,0">
+                <TextBlock x:Name="WToday" Margin="0,0,0,10" FontSize="25" Text="Worked Today: "></TextBlock>
+                <TextBlock x:Name="ATRecord" Margin="0,0,0,10" FontSize="25" Text="All-Time Record: "></TextBlock>
+                <TextBlock x:Name="AWDuration" Margin="0,0,0,10" FontSize="25" Text="Average Workout Duration: "></TextBlock>
+                <TextBlock x:Name="FExercise" Margin="0,0,0,10" FontSize="25" Text="Favourite Exercise: "></TextBlock>
+                <Border Height="10"></Border>
+                <TextBlock x:Name="LExercises" Margin="0,0,0,10" FontSize="25" Text="Loaded Exercises: "></TextBlock>
+                <TextBlock x:Name="NExercise" Margin="0,0,0,10" FontSize="25" Text="Newest Exercise: "></TextBlock>
+                <Button Content="Clear data" Margin="100,30, 100,0" Tap="on_clear" />
+            </StackPanel>
         </Grid>
     </Grid>
 
