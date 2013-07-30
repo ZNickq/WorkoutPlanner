@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using WorkoutPlanner.ViewModels;
+using System.Diagnostics;
 
 namespace WorkoutPlanner
 {
@@ -16,14 +17,14 @@ namespace WorkoutPlanner
         public AddExercise()
         {
             InitializeComponent();
-
-            MyListPicker.ItemsSource = ExerciseType.ExerciseList;
         }
 
 
         // When page is navigated to set data context to selected item in list
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            //Debug.WriteLine("Got here");
+            txtPhoneNumber2.Text = selected;
             if (DataContext == null)
             {
                 string selectedIndex = "";
@@ -75,9 +76,16 @@ namespace WorkoutPlanner
                 Console.WriteLine(ex.Message); //Doesn't do shit but don't care
                 return;
             }
-            (DataContext as WorkoutViewModel).addExercise(new ExerciseViewModel(ExerciseType.FromName((string)MyListPicker.SelectedItem), nr));
+            (DataContext as WorkoutViewModel).addExercise(new ExerciseViewModel(ExerciseType.FromName(selected), nr));
             SaveHandler.SaveUserImagesLocalDataAsync();
             NavigationService.GoBack();
+        }
+
+
+        public static string selected = "";
+        private void on_tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ExerciseList.xaml?foradd=true", UriKind.Relative));
         }
     }
 }

@@ -44,12 +44,36 @@ namespace WorkoutPlanner
 
         }
 
+        Boolean forAdd = false;
+
+
+        // When page is navigated to set data context to selected item in list
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+                string selectedIndex = "";
+                if (NavigationContext.QueryString.TryGetValue("foradd", out selectedIndex))
+                {
+                    if (selectedIndex.Equals("true"))
+                    {
+                        forAdd = true;
+                    }
+                }
+        }
+
         private void LLS_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LongListSelector LLS = sender as LongListSelector;
             // If selected item is null, do nothing
             if (LLS.SelectedItem == null)
                 return;
+
+            if (forAdd)
+            {
+                AddExercise.selected = LLS.SelectedItem.ToString();
+                NavigationService.GoBack();
+                return;
+            }
+
             NavigationService.Navigate(new Uri("/ExerciseExplanation.xaml?exerciseToShow=" + LLS.SelectedItem.ToString(), UriKind.Relative));
             // Reset selected item to null
             LLS.SelectedItem = null;

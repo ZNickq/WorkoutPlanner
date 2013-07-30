@@ -76,7 +76,7 @@ namespace WorkoutPlanner
 
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ExerciseList.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/ExerciseList.xaml?foradd=false", UriKind.Relative));
         }
 
         // Sample code for building a localized ApplicationBar
